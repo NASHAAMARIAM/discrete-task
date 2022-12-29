@@ -1,43 +1,42 @@
-﻿namespace Pro1
+﻿namespace Pro2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!\n");
-            bool flag = true;
+            
             Console.Write("Please,Enter Num1:");
             int Num1 = int.Parse(Console.ReadLine());
 
             Console.Write("Please,Enter Num2:");
             int Num2 = int.Parse(Console.ReadLine());
-
-            for (int Num=Num1 ; Num <= Num2; Num++)
-            { 
-                for (int j=2 ;j <= Num2; j++)
+            
+            for(int num = Num1 ; num <= Num2 ; num ++)
+            {
+                int sum = 0;
+                for (int j = 1; j < num; j++)
                 {
-                    if (Num!=j && Num%j==0)
+
+                    if (num % j == 0)
                     {
-                        flag = false;
-                        break;
+                        sum = sum + j;
                     }
-                }
-               if(flag)
-                {
-                    Console.Write("\t" + Num);
-                }
-                flag = true;
+
+                }    
+                    
+                    if (sum == num)
+                    {
+                        Console.WriteLine("\t"+num);
+                        
+
+                    }
+                
+                
+
             }
+
             Console.ReadKey();
-           
-
-
-
- 
-
-
-
-
 
 
         }
